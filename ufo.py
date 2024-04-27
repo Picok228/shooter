@@ -1,17 +1,14 @@
+import random
+
 import pygame
 
-
-class Player:
+class UFO:
     def __init__(self,x,y,w,h,img,speed):
         self.photo = pygame.transform.scale(pygame.image.load(img), (w,h))
         self.hitbox = self.photo.get_rect()
         self.hitbox.x = x
         self.hitbox.y = y
         self.speed = speed
-        self.dir = "right"
-
-        self.dir = "left"
-
 
 
     def draw(self,window):
@@ -19,11 +16,9 @@ class Player:
         window.blit(self.photo,(self.hitbox.x, self.hitbox.y))
 
     def move(self):
-        keys = pygame.key.get_pressed()
+        self.hitbox.y += self.speed
+        if self.hitbox.y > 700:
+            self.hitbox.y = 0
+            self.hitbox.y = random.randint(-200,10)
 
-        if keys[pygame.K_d]:
-            self.hitbox.x += self.speed
-            self.dir = "right"
-        if keys[pygame.K_a]:
-            self.hitbox.x -= self.speed
-            self.dir = "left"
+
