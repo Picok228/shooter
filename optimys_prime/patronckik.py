@@ -15,5 +15,9 @@ class UFO:
         #pygame.draw.rect(window,(225,0,0),self.hitbox)
         window.blit(self.photo,(self.hitbox.x, self.hitbox.y))
 
-
+    def move(self):
+        self.hitbox.y += self.speed
+        if self.hitbox.y > -700:
+            self.hitbox.y = 0
+            self.hitbox.y = random.randint(200,-10)
 
