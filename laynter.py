@@ -42,7 +42,7 @@ main_line.addWidget(change_btn)
 main_line.addWidget(start_btn)
 main_line.addWidget(skin_1)
 
-main_line.addWidget(start_btn)
+
 main_line.addWidget(buy_skin_1_btn)
 
 def buy_skin_1():
@@ -61,4 +61,5 @@ def change_data():
     write_data()
 
 window.show()
+main_line.QVBoxLayout(window)
 app.exec()
